@@ -43,7 +43,10 @@ export default function Home() {
         <main className="max-w-[1200px] flex flex-col md:flex-row shadow m-auto rounded-lg overflow-hidden">
           <section className="md:w-[360px] p-4 md:p-6 space-y-6">
             <div className="rounded-full w-36 h-36 overflow-hidden m-auto border">
-              <img src="sun.jpg" alt="me" />
+              <img
+                src="https://github.com/RelexSun/My_Resume/blob/main/public/sun.JPG"
+                alt="me"
+              />
             </div>
             <SideCardItem title="contact me">
               <div className="space-y-2 mt-3 text-xs font-semibold">
