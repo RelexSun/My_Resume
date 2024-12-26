@@ -193,8 +193,8 @@ export default function Home() {
                   Freelence
                 </p>
                 <div className="space-y-2">
-                  <ListItem text="I started working independently as a freelencer and have built several projects such as landing page and a fullstack web app using TypeScript along with NextJS and NestJS." />
-                  <ListItem text="Collaborating with my mentor to further enhance my skill by getting my hands on a real-world project." />
+                  <ListItem text="As a self-taught developer driven by a passion for continuous learning, I pursued freelancing to refine my skills and gain real-world experience. I have successfully delivered projects such as responsive landing pages and a full-stack web application, utilizing TypeScript along with modern frameworks like Next.js and NestJS." />
+                  <ListItem text="Collaborated with my mentor to further develop my skills by actively contributing to real-world projects." />
                 </div>
               </ContentSection>
               <ContentSection title="projects">
