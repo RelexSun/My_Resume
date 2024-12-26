@@ -45,7 +45,7 @@ export default function Home() {
           <section className="md:w-[360px] p-4 md:p-6 space-y-6">
             <div className="rounded-full w-36 h-36 overflow-hidden m-auto border">
               <Image
-                src="/sun.jpg"
+                src="/sun.png"
                 width={500}
                 height={500}
                 alt="Picture of the author"
@@ -115,7 +115,9 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-[#1e56a0] font-bold">University</h3>
+                  <h3 className="text-[#1e56a0] font-bold">
+                    University / Bachelor Degree
+                  </h3>
                   <div>
                     <p className="text-xs font-semibold">
                       Cambodia Academy of Digital Technology /{" "}
