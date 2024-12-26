@@ -76,7 +76,7 @@ export default function Home() {
                   >
                     github.com/RelexSun
                   </span>
-                </div>{" "}
+                </div>
               </div>
             </SideCardItem>
             <SideCardItem title="education">
@@ -148,7 +148,7 @@ export default function Home() {
               <ListItem text="ReactJS, NextJS" />
               <ListItem text="NodeJS, NestJS" />
               <ListItem text="TypeScript, JavaScript" />
-              <ListItem text="CSS (Tailwind CSS, Bootstrap, SASS)" />
+              <ListItem text="CSS (Tailwind CSS, Bootstrap)" />
               <ListItem text="Git, GitHub" />
             </SideCardItem>
             <SideCardItem title="hobbies">
@@ -187,13 +187,71 @@ export default function Home() {
               <ContentSection title="work experiences">
                 <div className="flex justify-between mb-1 font-semibold text-sm">
                   <span>Web Developer</span>
-                  <span className="text-gray-600">Dec 2023 - Present</span>
+                  <span className="text-gray-600">JAN 2024 - Present</span>
                 </div>
                 <p className="text-[#1e56a0] mb-2 font-semibold text-sm">
                   Freelence
                 </p>
                 <div className="space-y-2">
-                  <ListItem text="" />
+                  <ListItem text="I started working independently as a freelencer and have built several projects such as landing page and a fullstack web app using TypeScript along with NextJS and NestJS." />
+                  <ListItem text="Collaborating with my mentor to further enhance my skill by getting my hands on a real-world project." />
+                </div>
+              </ContentSection>
+              <ContentSection title="projects">
+                <div className="flex justify-between">
+                  <div className="flex items-center gap-2 text-sm font-semibold">
+                    <Github className="h-4 w-4 text-[#1e56a0]" />
+                    <span
+                      className="cursor-pointer hover:underline text-[#1e56a0] "
+                      onClick={() =>
+                        window.open("https://sun-aba.vercel.app/", "_blank")
+                      }
+                    >
+                      ABA-Cloning
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-semibold">
+                    <Github className="h-4 w-4 text-[#1e56a0]" />
+                    <span
+                      className="cursor-pointer hover:underline text-[#1e56a0] "
+                      onClick={() =>
+                        window.open(
+                          "https://saas-clone-rd4t-git-main-relexsuns-projects.vercel.app/",
+                          "_blank"
+                        )
+                      }
+                    >
+                      Saas-Page
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-semibold">
+                    <Github className="h-4 w-4 text-[#1e56a0]" />
+                    <span
+                      className="cursor-pointer hover:underline text-[#1e56a0] "
+                      onClick={() =>
+                        window.open(
+                          "https://github.com/RelexSun/aba-payway-login",
+                          "_blank"
+                        )
+                      }
+                    >
+                      E-Menu (Frontend)
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-semibold">
+                    <Github className="h-4 w-4 text-[#1e56a0]" />
+                    <span
+                      className="cursor-pointer hover:underline text-[#1e56a0] "
+                      onClick={() =>
+                        window.open(
+                          "https://github.com/RelexSun/nest-authV2",
+                          "_blank"
+                        )
+                      }
+                    >
+                      E-Menu (Backend)
+                    </span>
+                  </div>
                 </div>
               </ContentSection>
               <ContentSection title="reference">
