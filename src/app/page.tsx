@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import sun from "../../public/sun.png";
 
 export default function Home() {
   const [showFloatButton, setShowFloatButton] = useState(false);
@@ -45,7 +46,7 @@ export default function Home() {
           <section className="md:w-[360px] p-4 md:p-6 space-y-6">
             <div className="rounded-full w-36 h-36 overflow-hidden m-auto border">
               <Image
-                src="/sun.png"
+                src={sun}
                 width={500}
                 height={500}
                 alt="Picture of the author"
