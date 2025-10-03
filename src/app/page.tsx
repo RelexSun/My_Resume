@@ -43,7 +43,7 @@ export default function Home() {
     <>
       <div className=" bg-[#eaeffc] min-h-screen max-w-full p-2 md:p-5 lg:p-10">
         <main className="max-w-[1200px] flex flex-col md:flex-row shadow m-auto rounded-lg overflow-hidden">
-          <section className="md:w-[360px] p-4 md:p-6 space-y-6">
+          <section className="md:w-[360px] p-4 md:p-6 space-y-6 bg-[#e0e7fb]">
             <div className="rounded-full w-36 h-36 overflow-hidden m-auto border">
               <Image
                 src={sun}
@@ -102,43 +102,20 @@ export default function Home() {
                   </span>
                 </div>
 
-                <div>
-                  <h3 className="text-[#1e56a0] font-bold">
-                    Self-Taught Software Developer
-                  </h3>
-                  <p className="text-xs font-semibold">
-                    After six months of training, I began to further enhance my
-                    skills independently with guidance from my mentor.
-                  </p>
-                  <p className="text-xs font-semibold text-gray-600">
-                    Dec/2023 - Present
-                  </p>
-                </div>
-
                 <div className="space-y-2">
                   <h3 className="text-[#1e56a0] font-bold">
                     University / Bachelor Degree
                   </h3>
-                  <div>
-                    <p className="text-xs font-semibold">
-                      Cambodia Academy of Digital Technology /{" "}
-                      <span className="text-[#1e56a0]">
-                        Prek Leab, Phnom Penh
-                      </span>
-                    </p>
-                    <p className="text-xs font-semibold text-gray-600">
-                      Feb/2024 - Dec/2024
-                    </p>
-                  </div>
+
                   <div>
                     <p className="text-xs font-semibold">
                       Norton University /{" "}
                       <span className="text-[#1e56a0]">
-                        Chroy Chong Va, Phnom Penh
+                        Software Development
                       </span>
                     </p>
                     <p className="text-xs font-semibold text-gray-600">
-                      Dec/2024 - Present
+                      2024 - Present
                     </p>
                   </div>
                 </div>
@@ -164,13 +141,11 @@ export default function Home() {
               <h1 className="text-[#1e56a0] text-4xl font-extrabold mb-1 uppercase tracking-tighter">
                 nop relexsun
               </h1>
-              <p className="text-gray-600 text-lg font-semibold ">
-                Software Developer
-              </p>
+              <p className=" text-lg font-semibold ">Backend Developer</p>
             </div>
             <section className="space-y-6">
               <ContentSection title="introduction">
-                <p className="text-gray-600 text-sm font-semibold">
+                <p className=" text-sm font-semibold">
                   I{"'"}m a software developer who{"'"}s all about adapting to
                   the fast-paced world of tech. I know my way around agile
                   methods and can easily pick up new tech trends. Git and GitHub
@@ -187,7 +162,7 @@ export default function Home() {
               <ContentSection title="work experiences">
                 <div className="flex justify-between mb-1 font-semibold text-sm">
                   <span>Web Developer</span>
-                  <span className="text-gray-600">JAN 2024 - Present</span>
+                  <span className="">JAN 2024 - Present</span>
                 </div>
                 <p className="text-[#1e56a0] mb-2 font-semibold text-sm">
                   Freelence
@@ -262,19 +237,17 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Briefcase className="h-4 w-4 text-[#1e56a0]" />
-                    <span className="text-gray-600">
+                    <span className="">
                       Senior Developer at Ministry of Commerce
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Phone className="h-4 w-4 text-[#1e56a0]" />
-                    <span className="text-gray-600">
-                      Phone: (+855) 99 965 943
-                    </span>
+                    <span className="">Phone: (+855) 99 965 943</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-[#1e56a0]" />
-                    <span className="text-gray-600">somon.soum9@gmail.com</span>
+                    <span className="">somon.soum9@gmail.com</span>
                   </div>
                 </div>
               </ContentSection>
