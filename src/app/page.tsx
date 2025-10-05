@@ -3,18 +3,12 @@
 import ContentSection from "@/components/custom/content-sec";
 import ListItem from "@/components/custom/list-item";
 import SideCardItem from "@/components/custom/side-card";
-import {
-  ArrowUp,
-  Briefcase,
-  Github,
-  Mail,
-  MapPin,
-  Phone,
-  User,
-} from "lucide-react";
+import { ArrowUp, Github, Mail, MapPin, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import sun from "../../public/sun.png";
+import sun from "../../public/sun.jpg";
+import ContentReference from "@/components/custom/content-reference";
+import ContentTraining from "@/components/custom/content-traning";
 
 export default function Home() {
   const [showFloatButton, setShowFloatButton] = useState(false);
@@ -93,7 +87,7 @@ export default function Home() {
                     Jun/2023 - Dec/2023
                   </p>
                   <span
-                    className="text-xs font-semibold text-[#1e56a0]"
+                    className="text-xs font-semibold text-[#1e56a0] cursor-pointer"
                     onClick={() =>
                       window.open("https://anbschool.org/", "_blank")
                     }
@@ -102,7 +96,28 @@ export default function Home() {
                   </span>
                 </div>
 
-                <div className="space-y-2">
+                <div>
+                  <h3 className="text-[#1e56a0] font-bold">
+                    Korea Software HRD Center
+                  </h3>
+                  <p className="text-xs font-semibold">
+                    Korea Software training school/{" "}
+                    <span className="text-[#1e56a0]">Phnom Penh</span>
+                  </p>
+                  <p className="text-xs font-semibold text-gray-600">
+                    Jan/2025 - Present
+                  </p>
+                  <span
+                    className="text-xs font-semibold text-[#1e56a0] cursor-pointer"
+                    onClick={() =>
+                      window.open("https://www.kshrd.com.kh/", "_blank")
+                    }
+                  >
+                    Korea Software HRD Center
+                  </span>
+                </div>
+
+                <div className="">
                   <h3 className="text-[#1e56a0] font-bold">
                     University / Bachelor Degree
                   </h3>
@@ -121,13 +136,6 @@ export default function Home() {
                 </div>
               </div>
             </SideCardItem>
-            <SideCardItem title="skills">
-              <ListItem text="ReactJS, NextJS" />
-              <ListItem text="NodeJS, NestJS" />
-              <ListItem text="TypeScript, JavaScript" />
-              <ListItem text="CSS (Tailwind CSS, Bootstrap)" />
-              <ListItem text="Git, GitHub" />
-            </SideCardItem>
             <SideCardItem title="hobbies">
               <ListItem text="🥋 Judo, Gym and Jog" />
               <ListItem text="🎹 Self-taught piano player" />
@@ -144,25 +152,20 @@ export default function Home() {
               <p className=" text-lg font-semibold ">Backend Developer</p>
             </div>
             <section className="space-y-6">
-              <ContentSection title="introduction">
+              <ContentSection title="summary">
                 <p className=" text-sm font-semibold">
-                  I{"'"}m a software developer who{"'"}s all about adapting to
-                  the fast-paced world of tech. I know my way around agile
-                  methods and can easily pick up new tech trends. Git and GitHub
-                  are my tools for keeping our code organized and team efforts
-                  smooth. I{"'"}m driven by a passion for making things better.
-                  I{"'"}m the kind to jump into code reviews and pair
-                  programming, always looking for ways to improve. I{"'"}m
-                  genuinely curious and always excited to learn, with a
-                  commitment to growing my skills and bringing fresh ideas to
-                  the table. I{"'"}m pumped about the chance to share my
-                  experience and be part of some cool projects with your team.
+                  Fast-learning and adaptable backend developer with strong
+                  problem-solving skills and expertise in Java Spring Boot,
+                  Spring Cloud, and microservices architecture. Experienced with
+                  Kafka, RabbitMQ, Docker, and CI/CD, as well as Node.js and
+                  React. Known for leadership, collaboration, and a desire to
+                  grow in innovative environments.
                 </p>
               </ContentSection>
-              <ContentSection title="work experiences">
+              {/* <ContentSection title="work experiences">
                 <div className="flex justify-between mb-1 font-semibold text-sm">
                   <span>Web Developer</span>
-                  <span className="">JAN 2024 - Present</span>
+                  <span className="">Jan 2024 - Present</span>
                 </div>
                 <p className="text-[#1e56a0] mb-2 font-semibold text-sm">
                   Freelence
@@ -171,8 +174,30 @@ export default function Home() {
                   <ListItem text="As a self-taught developer driven by a passion for continuous learning, I pursued freelancing to refine my skills and gain real-world experience. I have successfully delivered projects such as responsive landing pages and a full-stack web application, utilizing TypeScript along with modern frameworks like Next.js and NestJS." />
                   <ListItem text="Collaborated with my mentor to further develop my skills by actively contributing to real-world projects." />
                 </div>
+              </ContentSection> */}
+              <ContentSection title="technical training">
+                {trainings.map((item, index) => (
+                  <ContentTraining
+                    key={index}
+                    title={item.title}
+                    date={item.date}
+                    school={item.school}
+                    items={item.items}
+                  />
+                ))}
               </ContentSection>
-              <ContentSection title="projects">
+              <ContentSection title="technical skills">
+                {skills.map((item, index) => (
+                  <ListItem key={index} text={item} />
+                ))}
+              </ContentSection>
+              <ContentSection title="soft skills">
+                {softSkills.map((item, index) => (
+                  <ListItem key={index} text={item} />
+                ))}
+              </ContentSection>
+
+              {/* <ContentSection title="projects">
                 <div className="flex justify-between">
                   <div className="flex items-center gap-2 text-sm font-semibold">
                     <Github className="h-4 w-4 text-[#1e56a0]" />
@@ -228,28 +253,17 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              </ContentSection>
+              </ContentSection> */}
               <ContentSection title="reference">
-                <div className="text-sm font-semibold">
-                  <div className="flex items-center gap-2">
-                    <User className="h-4 w-4 text-[#1e56a0]" />
-                    <span className="text-[#1e56a0]">Mr. SOUM SOMON</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Briefcase className="h-4 w-4 text-[#1e56a0]" />
-                    <span className="">
-                      Senior Developer at Ministry of Commerce
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="h-4 w-4 text-[#1e56a0]" />
-                    <span className="">Phone: (+855) 99 965 943</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4 text-[#1e56a0]" />
-                    <span className="">somon.soum9@gmail.com</span>
-                  </div>
-                </div>
+                {references.map((item, index) => (
+                  <ContentReference
+                    key={index}
+                    email={item.email}
+                    name={item.name}
+                    phone={item.phone}
+                    position={item.position}
+                  />
+                ))}
               </ContentSection>
             </section>
           </section>
@@ -266,3 +280,73 @@ export default function Home() {
     </>
   );
 }
+
+const references = [
+  {
+    name: "Mr. SOUM SOMON",
+    position: "Senior Developer at Ministry of Commerce",
+    phone: "Phone: (+855) 99 965 943",
+    email: "somon.soum9@gmail.com",
+  },
+  {
+    name: "Mr. KHENG SOVANNAK",
+    position: "IT Instructor at Korea Software HRD Center",
+    phone: "Phone: (+855) 96 620 4067",
+    email: "sovannak.kheng0309@gmail.com",
+  },
+];
+
+const trainings = [
+  {
+    title: "Software Development Training",
+    date: "Jun 2023 - Dec 2023",
+    school: "Above & Beyond School, Phnom Penh",
+    items: [
+      "Developed an e-commerce platform using MERN stack (MongoDB, Express.js, React, Node.js).",
+      "Agile Methodology with daily scrum and sprint-meeting.",
+      "Familiars with version control like Git, Gitflow and Github.",
+    ],
+  },
+  {
+    title: "Basic Course Training",
+    date: "Jan 2025 - Jul 2025",
+    school: "Korea Software HRD Center, Phnom Penh",
+    items: [
+      "Led and managed a backend team to develop RESTful APIs using Spring Boot for both coding challenges and the final project.",
+      "Designed and analyzed the Entity Relationship Diagram (ERD) for the final project.",
+      "Handling authentication JWTs using Spring Security and Redis for caching OTP.",
+      "Resolved diverged branches and merge conflicts to maintain a smooth Git workflow for the team.",
+      "Deployed the final project using Docker and GitHub Actions for CI/CD, hosting it on a Linux server using Google Cloud Platform (GCP).",
+    ],
+  },
+  {
+    title: "Advanced Course Training",
+    date: "July 2025 - Present",
+    school: "Korea Software HRD Center, Phnom Penh",
+    items: [
+      "Accepted into the Spring Advanced Course, focusing on Microservices Architecture using Spring Cloud.",
+      "Gained hands-on experience in designing and developing distributed systems with Spring Boot, Eureka, API Gateway, and Config Server.",
+      "Implemented inter-service communication using Feign Clients and REST APIs.",
+      "Integrated message brokers such as Kafka and RabbitMQ to enable asynchronous communication and event-driven architecture.",
+      "Practiced service discovery, load balancing, centralized configuration, and fault tolerance using Spring Cloud components.",
+    ],
+  },
+];
+
+const skills = [
+  "Programming Languages: Java, TypeScript, JavaScript.",
+  "Frontend Development: Proficient in React.js and Next.js for building responsive, dynamic web interfaces.",
+  "Backend Development: Experienced in Node.js and NestJS, with strong expertise in Spring Boot and Spring Cloud for developing RESTful and microservices-based applications.",
+  "Database: PostgreSQL, MySQL, MongoDB.",
+  "Architecture & Design: SOLID principles, OOP, REST API design, and microservices architecture.",
+  "DevOps & Cloud: Skilled with Docker, GitHub Actions (CI/CD), and deployment on Linux servers using Google Cloud Platform (GCP).",
+  "Messaging & Integration: Hands-on experience with Kafka and RabbitMQ for asynchronous and event-driven communication.",
+];
+
+const softSkills = [
+  "Fast learner with adaptability across stacks.",
+  "Effective problem-solver who performs well under pressure.",
+  "Team-first mindset & strong collaboration skills.",
+  "Strong leadership & clear communication.",
+  "Reliable and easy to work with; focused on shared success",
+];
