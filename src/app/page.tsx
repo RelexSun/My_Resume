@@ -3,15 +3,19 @@
 import ContentSection from "@/components/custom/content-sec";
 import ListItem from "@/components/custom/list-item";
 import SideCardItem from "@/components/custom/side-card";
-import { ArrowUp, Github, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUp, Download, Github, Mail, MapPin, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import sun from "../../public/sun.jpg";
 import ContentReference from "@/components/custom/content-reference";
 import ContentTraining from "@/components/custom/content-traning";
+import ContentList from "@/components/custom/content-list";
+import { usePDF } from "react-to-pdf";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [showFloatButton, setShowFloatButton] = useState(false);
+  const { toPDF, targetRef } = usePDF({ filename: "Nop_Relexsun.pdf" });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,15 +38,18 @@ export default function Home() {
   };
 
   return (
-    <>
+    <main>
       <div className=" bg-[#eaeffc] min-h-screen max-w-full p-2 md:p-5 lg:p-10">
-        <main className="max-w-[1200px] flex flex-col md:flex-row shadow m-auto rounded-lg overflow-hidden">
+        <main
+          className="max-w-[1200px] flex flex-col md:flex-row shadow m-auto rounded-lg overflow-hidden"
+          ref={targetRef}
+        >
           <section className="md:w-[360px] p-4 md:p-6 space-y-6 bg-[#e0e7fb]">
             <div className="rounded-full w-36 h-36 overflow-hidden m-auto border">
               <Image
                 src={sun}
-                width={500}
-                height={500}
+                width={150}
+                height={150}
                 alt="Picture of the author"
               />
             </div>
@@ -136,21 +143,21 @@ export default function Home() {
                 </div>
               </div>
             </SideCardItem>
-            <SideCardItem title="hobbies">
-              <ListItem text="🥋 Judo, Gym and Jog" />
-              <ListItem text="🎹 Self-taught piano player" />
-              <ListItem text="🌐 Exploring new tech trends" />
-              <ListItem text="💻 Coding" />
-              <ListItem text="🌎 Traveling, eating" />
+            <SideCardItem title="Interests">
+              <ListItem text="Learning automated deployment using Jenkins and ArgoCD" />
+              <ListItem text="Actively learning Kubernetes for container orchestration and microservices deployment" />
             </SideCardItem>
           </section>
           <section className="w-full bg-white p-4 md:p-6">
-            <div className="mb-8">
-              <h1 className="text-[#1e56a0] text-4xl font-extrabold mb-1 uppercase tracking-tighter">
-                nop relexsun
-              </h1>
-              <p className=" text-lg font-semibold ">Backend Developer</p>
+            <div className="mb-8 flex justify-between items-start">
+              <div>
+                <h1 className="text-[#1e56a0] text-4xl font-extrabold mb-1 uppercase tracking-tighter">
+                  nop relexsun
+                </h1>
+                <p className=" text-lg font-semibold ">Backend Developer</p>
+              </div>
             </div>
+
             <section className="space-y-6">
               <ContentSection title="summary">
                 <p className=" text-sm font-semibold">
@@ -162,19 +169,18 @@ export default function Home() {
                   grow in innovative environments.
                 </p>
               </ContentSection>
-              {/* <ContentSection title="work experiences">
-                <div className="flex justify-between mb-1 font-semibold text-sm">
-                  <span>Web Developer</span>
-                  <span className="">Jan 2024 - Present</span>
-                </div>
-                <p className="text-[#1e56a0] mb-2 font-semibold text-sm">
-                  Freelence
-                </p>
-                <div className="space-y-2">
-                  <ListItem text="As a self-taught developer driven by a passion for continuous learning, I pursued freelancing to refine my skills and gain real-world experience. I have successfully delivered projects such as responsive landing pages and a full-stack web application, utilizing TypeScript along with modern frameworks like Next.js and NestJS." />
-                  <ListItem text="Collaborated with my mentor to further develop my skills by actively contributing to real-world projects." />
-                </div>
-              </ContentSection> */}
+
+              <ContentSection title="work experiences">
+                {experiences.map((item, index) => (
+                  <ContentTraining
+                    key={index}
+                    title={item.title}
+                    date={item.date}
+                    school={item.school}
+                    items={item.items}
+                  />
+                ))}
+              </ContentSection>
               <ContentSection title="technical training">
                 {trainings.map((item, index) => (
                   <ContentTraining
@@ -187,14 +193,10 @@ export default function Home() {
                 ))}
               </ContentSection>
               <ContentSection title="technical skills">
-                {skills.map((item, index) => (
-                  <ListItem key={index} text={item} />
-                ))}
+                {<ContentList items={skills} />}
               </ContentSection>
               <ContentSection title="soft skills">
-                {softSkills.map((item, index) => (
-                  <ListItem key={index} text={item} />
-                ))}
+                {<ContentList items={softSkills} />}
               </ContentSection>
 
               {/* <ContentSection title="projects">
@@ -277,7 +279,7 @@ export default function Home() {
           <ArrowUp className="w-6 h-6" />
         </button>
       )}
-    </>
+    </main>
   );
 }
 
@@ -350,3 +352,23 @@ const softSkills = [
   "Strong leadership & clear communication.",
   "Reliable and easy to work with; focused on shared success",
 ];
+
+const experiences = [
+  {
+    title: "Web Developer",
+    date: "Jan 2024 - Dec 2024",
+    school: "Freelence",
+    items: [
+      "As a self-taught developer driven by a passion for continuous learning, I pursued freelancing to refine my skills and gain real-world experience. I have successfully delivered projects such as responsive landing pages and a full-stack web application, utilizing TypeScript along with modern frameworks like Next.js and NestJS.",
+      "Collaborated with a senior to further develop my skills by actively contributing to real-world projects.",
+    ],
+  },
+];
+
+// <SideCardItem title="hobbies">
+//             <ListItem text="🥋 Judo, Gym and Jog" />
+//             <ListItem text="🎹 Self-taught piano player" />
+//             <ListItem text="🌐 Exploring new tech trends" />
+//             <ListItem text="💻 Coding" />
+//             <ListItem text="🌎 Traveling, eating" />
+//           </SideCardItem>
