@@ -3,19 +3,19 @@
 import ContentSection from "@/components/custom/content-sec";
 import ListItem from "@/components/custom/list-item";
 import SideCardItem from "@/components/custom/side-card";
-import { ArrowUp, Download, Github, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUp, Github, Mail, MapPin, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import sun from "../../public/sun.jpg";
 import ContentReference from "@/components/custom/content-reference";
 import ContentTraining from "@/components/custom/content-traning";
 import ContentList from "@/components/custom/content-list";
-import { usePDF } from "react-to-pdf";
-import { Button } from "@/components/ui/button";
+// import { usePDF } from "react-to-pdf";
+// import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [showFloatButton, setShowFloatButton] = useState(false);
-  const { toPDF, targetRef } = usePDF({ filename: "Nop_Relexsun.pdf" });
+  // const { toPDF, targetRef } = usePDF({ filename: "Nop_Relexsun.pdf" });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +42,7 @@ export default function Home() {
       <div className=" bg-[#eaeffc] min-h-screen max-w-full p-2 md:p-5 lg:p-10">
         <main
           className="max-w-[1200px] flex flex-col md:flex-row shadow m-auto rounded-lg overflow-hidden"
-          ref={targetRef}
+          // ref={targetRef}
         >
           <section className="md:w-[360px] p-4 md:p-6 space-y-6 bg-[#e0e7fb]">
             <div className="rounded-full w-36 h-36 overflow-hidden m-auto border">
